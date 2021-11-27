@@ -10,13 +10,8 @@
 <body>
 <%
 	request.setCharacterEncoding("euc-kr");
-	String rauthor = request.getParameter("bbsTitle");
-	String rcontents= request.getParameter("bbsContent");
+	String rid = request.getParameter("rid");
 	String fid = request.getParameter("fid");
-	String rstar = request.getParameter("bbsRating");
-	String rpwd = "1234"; 
-	
-	
 	
 	String serverIP = "localhost";
 	String strSID = "orcl";
@@ -27,12 +22,11 @@
 	Connection conn = null;
 	PreparedStatement pstmt = null;
 	Statement stmt = null;
-	String sql = "insert into review values(rid_sequence.NEXTVAL,'"+ rauthor +"', '"+ rpwd + "',"+ fid +", "+ rstar + ", '" + rcontents+ "' )"; 
+	String sql = "delete from review where rid = " + rid; 
 	
 	ResultSet rs;
 	Class.forName("oracle.jdbc.driver.OracleDriver");
 	conn = DriverManager.getConnection(url, user, pass);
-	
 	conn.setAutoCommit(false);
 	
 	pstmt = conn.prepareStatement(sql);
@@ -44,11 +38,10 @@
 	pstmt.close();
 	conn.close();
 	
-	out.print("<h3> 리뷰 작성이 완료되었습니다. </h3>");
+	out.print("<h3> 리뷰 삭제가 완료되었습니다. </h3>");
 	
 	out.print("<button type=\"button\" onClick=\"location.href='getting.jsp?&fid="+fid+"'\"> 돌아가기 </button>");
 %>
-
 
 </body>
 </html>

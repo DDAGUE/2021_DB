@@ -7,7 +7,30 @@
 <meta charset="EUC-KR">
 <title>Phase2</title>
 <link rel="stylesheet" href="css/custom.css">
+<style>
+.scrolltbody {
+    display: block;
+    width: 700px;
+    border-collapse: collapse;
+    border: 2px solid #000;
+}
+.scrolltbody table {
+	width: 100%
+}
+.scrolltobyd table thead {width: 100%;}
+.scrolltbody th { border: 1px solid #000; background: pink; }
+.scrolltbody td { border: 1px solid #000; border-top: 0; }
+.scrolltbody tbody {
+    display: block;
+    width: 100%;
+    height: 500px;
+    overflow: auto;
+}
+.scrolltbody th:nth-of-type(1), .scrolltbody td:nth-of-type(1) { width: 10%; }
+.scrolltbody th:nth-of-type(2), .scrolltbody td:nth-of-type(2) { width: 10%; }
+.scrolltbody th:nth-of-type(3), .scrolltbody td:nth-of-type(3) { width: 80%; }
 
+</style>
 </head>
 <body>
 <%
@@ -79,26 +102,34 @@
 		
 		
 	}
-	
-	out.print("<div>");
+	out.print("<hr/>");
+	out.print("<div style=\" position: relative \">");
 	out.print("<form method =\"post\" action=\"review.jsp?&fid="+fid+"\">");
-	out.print("<input type=\"text\" class=\"form-control\" placeholder=\"작성자\" name=\"bbsTitle\" maxlength=\"50\">");
-	out.print("<textarea class=\"form-control\" placeholder=\"글 내용\" name=\"bbsContent\" maxlength=\"2048\" style=\"height: 200px;\"></textarea>");
-	out.print("<input type=\"text\" class=\"form-control\" placeholder=\"평점\" name=\"bbsRating\" maxlength=\"50\">");
-	out.print("<input type=\"submit\" class=\"btn btn-primary pull-right\" value=\"글쓰기\"></form></div>");
+	out.print("<div style=\"height: 60px; width: 110px ;position: relative ;display: inline-block \">");
+	out.print("<input type=\"text\"  placeholder=\"작성자\" name=\"bbsTitle\" maxlength=\"50\"style=\"height: 20px; width: 100px; \">");
+	out.print("<input type=\"text\"  placeholder=\"평점\" name=\"bbsRating\" maxlength=\"50\"style=\"height: 20px; width: 100px; \">");
+	out.print("</div>");
+	out.print("<div style=\"height: 60px; width: 600px ;position: relative; display: inline\">");
+	out.print("<textarea placeholder=\"글 내용\" name=\"bbsContent\" maxlength=\"2048\" style=\"height: 40px; width: 650px\"></textarea>");
+	out.print("</div>");
+	out.print("<div style=\" height: 60px; width: 80px; position:relative; display: inline \">");
+	out.print("<input style=\" height: 40px \" type=\"submit\"  value=\"글쓰기\">");
+	out.print("</div></form>");
+	out.print("</div>");
 	
-	
+	out.print("<hr/>");
 
-	out.print("<div class=\"container\"> <div class=\"row\"> <table class=\"table table-striped\" style=\"text-align: left; border: 1px solid #dddddd\"><thead>"+
-			"<tr><th width=\"10%\" style=\"background-color: #eeeeee; text-align: center;\">작성자</th>"+
-				"<th width=\"10%\" style=\"background-color: #eeeeee; text-align: center;\">평가</th>"+
-				"<th width=\"80%\" style=\"background-color: #eeeeee; text-align: center;\">내용</th></tr></thead><tbody>");
+	out.print("<div > <div class=\"row\"> <table class='scrolltbody' style=\"text-align: left; border: 1px solid #dddddd\"><thead>"+
+			"<tr><th style=\"background-color: #eeeeee; text-align: center;\">작성자</th>"+
+				"<th  style=\"background-color: #eeeeee; text-align: center;\">평가</th>"+
+				"<th  style=\"background-color: #eeeeee; text-align: center;\">내용</th></tr></thead><tbody>");
 	
 	
 	String review_sql = "select * from review where fid = " + fid;
 	pstmt = conn.prepareStatement(review_sql);
 	rs = pstmt.executeQuery();
 	while(rs.next()){
+		int rid = rs.getInt(1);
 		String Rauthor = rs.getString(2);
 		String Rpwd = rs.getString(3);
 		int Rstar = rs.getInt(5);
@@ -106,7 +137,7 @@
 		out.print("<tr>");
 		out.print("<td>" + Rauthor + "</td>");
 		out.print("<td>" + Rstar + "</td>");
-		out.print("<td>" + Rcontent + "</td>");
+		out.print("<td>" + Rcontent + "<Button onclick=\"location.href='deleterating.jsp?&rid="+ rid +"&fid="+fid+"'\" style=\" float: right\">X</Button></td>");
 		out.print("</tr>");
 	}
 	
