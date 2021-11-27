@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>TEAM_놀러가조</title>
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+        <link href="css/styles.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            <!-- Navbar Brand-->
+            <a class="navbar-brand ps-3" href="index.html">전국 축제 안내</a>
+            <!-- Navbar Search-->
+            <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0" method="POST" action="search.jsp">
+                <div class="input-group">
+                    <input name="search" class="form-control" type="text" placeholder="키워드를 검색해보세요..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                    <button class="btn btn-primary" id="btnNavbarSearch" type="submit"><i class="fas fa-search"></i></button>
+                </div>
+            </form>
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-12">
+                        <h1 class="mt-4">지역 선택</h1>
+                        <ol class="breadcrumb mb-4">
+                            <!-- <li class="breadcrumb-item active">Dashboard</li> -->
+                        </ol>
+                        <div class="row">
+                            <div class="col-xl-2 col-md-4">
+                                <div class="card bg-primary text-white mb-4">
+                                    <div class="card-body">서울특별시</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="#" onclick="location.href='festivalList_Local.jsp?&name=seoul'">View Details</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-2 col-md-4">
+                                <div class="card bg-warning text-white mb-4">
+                                    <div class="card-body">경기도</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="#" onclick="location.href='festivalList_Local.jsp?&name=gyeonggi-do'">View Details</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-2 col-md-4">
+                                <div class="card bg-dark text-white mb-4">
+                                    <div class="card-body">인천광역시</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="#" onclick="location.href='festivalList_Local.jsp?&name=incheon'">View Details</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-2 col-md-4">
+                                <div class="card bg-info text-white mb-4">
+                                    <div class="card-body">부산광역시</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="#" onclick="location.href='festivalList_Local.jsp?&name=busan'">View Details</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-2 col-md-4">
+                                <div class="card bg-success text-white mb-4">
+                                    <div class="card-body">대구광역시</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="#" onclick="location.href='festivalList_Local.jsp?&name=daegu'">View Details</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-2 col-md-4">
+                                <div class="card bg-primary text-white mb-4">
+                                    <div class="card-body">울산광역시</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="#" onclick="location.href='festivalList_Local.jsp?&name=ulsan'">View Details</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <main>
+                    <div class="container-fluid px-12">
+                        <div class="row">
+                            <div class="col-xl-2 col-md-4">
+                                <div class="card bg-warning text-white mb-4">
+                                    <div class="card-body">대전광역시</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="#" onclick="location.href='festivalList_Local.jsp?&name=daejeon'">View Details</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-2 col-md-4">
+                                <div class="card bg-black text-white mb-4">
+                                    <div class="card-body">광주광역시</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="#" onclick="location.href='festivalList_Local.jsp?&name=gwangju'">View Details</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-2 col-md-4">
+                                <div class="card bg-info text-white mb-4">
+                                    <div class="card-body">세종시</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="#" onclick="location.href='festivalList_Local.jsp?&name=sejong'">View Details</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-2 col-md-4">
+                                <div class="card bg-success text-white mb-4">
+                                    <div class="card-body">경상북도</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="#" onclick="location.href='festivalList_Local.jsp?&name=gyeongsangbuk-do'">View Details</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-2 col-md-4">
+                                <div class="card bg-primary text-white mb-4">
+                                    <div class="card-body">경상남도</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="#" onclick="location.href='festivalList_Local.jsp?&name=gyeongsangnam-do'">View Details</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-2 col-md-4">
+                                <div class="card bg-warning text-white mb-4">
+                                    <div class="card-body">충청북도</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="#" onclick="location.href='festivalList_Local.jsp?&name=chungcheongbuk-do'">View Details</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <main>
+                    <div class="container-fluid px-12">
+                        <div class="row">
+                            <div class="col-xl-2 col-md-4">
+                                <div class="card bg-black text-white mb-4">
+                                    <div class="card-body">충청남도</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="#" onclick="location.href='festivalList_Local.jsp?&name=chungcheongnam-do'">View Details</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-2 col-md-4">
+                                <div class="card bg-info text-white mb-4">
+                                    <div class="card-body">강원도</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="#" onclick="location.href='festivalList_Local.jsp?&name=gangwon-do'">View Details</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-2 col-md-4">
+                                <div class="card bg-success text-white mb-4">
+                                    <div class="card-body">전라북도</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="#" onclick="location.href='festivalList_Local.jsp?&name=jeollabuk-do'">View Details</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-2 col-md-4">
+                                <div class="card bg-primary text-white mb-4">
+                                    <div class="card-body">전라남도</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="#" onclick="location.href='festivalList_Local.jsp?&name=jeollanam-do'">View Details</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-2 col-md-4">
+                                <div class="card bg-warning text-white mb-4">
+                                    <div class="card-body">제주도</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="#" onclick="location.href='festivalList_Local.jsp?&name=jeju-do'">View Details</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid px-4">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Copyright &copy; Your Website 2021</div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="js/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="assets/demo/chart-area-demo.js"></script>
+        <script src="assets/demo/chart-bar-demo.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+        <script src="js/datatables-simple-demo.js"></script>
+        
+    </body>
+</html>
