@@ -50,7 +50,7 @@
 %>
 
 <%
-	String fid = "1";
+	String fid = request.getParameter("fid");
 	
 	sql = "select fdate, name, host_name, contact_number, state, town_city, festival_category, contents, holding_term , holding_location" +
 	", hosting_method, festival_subject "+
