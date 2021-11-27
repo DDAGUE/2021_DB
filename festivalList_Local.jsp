@@ -73,19 +73,21 @@ gyeongseob_seo
 %>
 
 <h4>Test for Click Seoul</h4>
-<!-- Click Seoul -->
 <%
+out.println("<div style=\"position: relative\">");
 if(localStr == "세종특별'||CHR(13)||CHR(10)||'자치시청")
 	out.println("<h2>세종특별자치시청 축제 목록</h2>");
 else
 	out.println("<h2>" + localStr + " 축제 목록" + "</h2>");
 
+out.println("<Button onclick=\"location.href='traditionalList.jsp?&PALID_STR="+ enumStr +"'\">전통시장 목록</Button>");
+out.println("</div>");
+
 String query = "SELECT NAME, ID "
 	 + "FROM FESTIVAL, LOCATION "
 	 + "WHERE FESTIVAL.ID = LOCATION.LID "
 	 + "AND LOCATION.STATE = '" + localStr + "'";
-System.out.println(enumStr);
-System.out.println(localStr);
+
 pstmt = conn.prepareStatement(query);
 rs = pstmt.executeQuery();
 out.println("<table border=\"1\">");
