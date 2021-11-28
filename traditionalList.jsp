@@ -64,7 +64,6 @@ pstmt = conn.prepareStatement(query);
 rs = pstmt.executeQuery();
 out.println("<table border=\"1\">");
 ResultSetMetaData rsmd = rs.getMetaData();
-rsmd = rs.getMetaData();
 int cnt = rsmd.getColumnCount();
 for(int i=1; i <= cnt; i++){
  out.println("<th>"+rsmd.getColumnName(i)+"</th>");
@@ -72,10 +71,9 @@ for(int i=1; i <= cnt; i++){
 int number = 1;
 while(rs.next()){
  out.println("<tr>");
- out.println("<td>"+ number + ". " + rs.getString(1) + "</td>");
+ out.println("<td>"+ number++ + ". " + rs.getString(1) + "</td>");
  out.println("<td>"+ rs.getString(2) + "</td>");
  out.println("</tr>");
- number++;
 }
 out.println("</table>");
 %>

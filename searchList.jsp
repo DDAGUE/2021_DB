@@ -29,7 +29,6 @@ gyeongseob_seo
  
  request.setCharacterEncoding("utf-8");
  String searchFestival = request.getParameter("searchFestival");
- out.println(searchFestival);
 
 out.println("<h2>'" + searchFestival + "' 관련 축제 목록" + "</h2>");
 
@@ -48,9 +47,8 @@ for(int i=1; i <= 1; i++){
 int number = 1;
 while(rs.next()){
  out.println("<tr>");
- out.println("<td>" + number + ". <a href='getting.jsp?&fid="+rs.getInt(2)+"'>"+rs.getString(1)+"</a></td>");
+ out.println("<td>" + number++ + ". <a href='getting.jsp?&fid="+rs.getInt(2)+"'>"+rs.getString(1)+"</a></td>");
  out.println("</tr>");
- number++;
 }
 out.println("</table>");
 %>
