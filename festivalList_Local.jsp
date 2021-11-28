@@ -70,10 +70,7 @@ gyeongseob_seo
  String Gyeongsangbuk = request.getParameter("gyeongsangbuk-do");
  String Gyeongsangnam = request.getParameter("gyeongsangnam-do");
  String Jeju = request.getParameter("jeju-do");
-%>
 
-<h4>Test for Click Seoul</h4>
-<%
 out.println("<div style=\"position: relative\">");
 if(localStr == "세종특별'||CHR(13)||CHR(10)||'자치시청")
 	out.println("<h2>세종특별자치시청 축제 목록</h2>");
@@ -92,15 +89,16 @@ pstmt = conn.prepareStatement(query);
 rs = pstmt.executeQuery();
 out.println("<table border=\"1\">");
 ResultSetMetaData rsmd = rs.getMetaData();
-rsmd = rs.getMetaData();
 int cnt = rsmd.getColumnCount();
 for(int i=1; i <= 1; i++){
  out.println("<th>"+rsmd.getColumnName(i)+"</th>");
 }
+int number = 1;
 while(rs.next()){
  out.println("<tr>");
- out.println("<td><a href='getting.jsp?&fid="+rs.getInt(2)+"'>"+rs.getString(1)+"</a></td>");
+ out.println("<td>" + number + ". <a href='getting.jsp?&fid="+rs.getInt(2)+"'>"+rs.getString(1)+"</a></td>");
  out.println("</tr>");
+ number++;
 }
 out.println("</table>");
 %>

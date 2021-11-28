@@ -69,11 +69,13 @@ int cnt = rsmd.getColumnCount();
 for(int i=1; i <= cnt; i++){
  out.println("<th>"+rsmd.getColumnName(i)+"</th>");
 }
+int number = 1;
 while(rs.next()){
  out.println("<tr>");
- out.println("<td>"+ rs.getString(1) + "</td>");
+ out.println("<td>"+ number + ". " + rs.getString(1) + "</td>");
  out.println("<td>"+ rs.getString(2) + "</td>");
  out.println("</tr>");
+ number++;
 }
 out.println("</table>");
 %>
