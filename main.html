@@ -16,9 +16,9 @@
             <!-- Navbar Brand-->
             <a class="navbar-brand ps-3" href="index.html">전국 축제 안내</a>
             <!-- Navbar Search-->
-            <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0" method="POST" action="search.jsp">
+            <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0" method="POST" action="searchList.jsp">
                 <div class="input-group">
-                    <input name="search" class="form-control" type="text" placeholder="키워드를 검색해보세요..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                    <input name="searchFestival" class="form-control" type="text" placeholder="키워드를 검색해보세요..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
                     <button class="btn btn-primary" id="btnNavbarSearch" type="submit"><i class="fas fa-search"></i></button>
                 </div>
             </form>
@@ -36,7 +36,7 @@
                                 <div class="card bg-primary text-white mb-4">
                                     <div class="card-body">서울특별시</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#" onclick="location.href='festivalList_Local.jsp?&name=seoul'">View Details</a>
+                                        <a class="small text-white stretched-link" href="#" onclick="location.href='festivalList_Local.jsp?&seoul'">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -45,7 +45,7 @@
                                 <div class="card bg-warning text-white mb-4">
                                     <div class="card-body">경기도</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#" onclick="location.href='festivalList_Local.jsp?&name=gyeonggi-do'">View Details</a>
+                                        <a class="small text-white stretched-link" href="#" onclick="location.href='festivalList_Local.jsp?&gyeonggi-do'">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -54,7 +54,7 @@
                                 <div class="card bg-dark text-white mb-4">
                                     <div class="card-body">인천광역시</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#" onclick="location.href='festivalList_Local.jsp?&name=incheon'">View Details</a>
+                                        <a class="small text-white stretched-link" href="#" onclick="location.href='festivalList_Local.jsp?&incheon'">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -63,7 +63,7 @@
                                 <div class="card bg-info text-white mb-4">
                                     <div class="card-body">부산광역시</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#" onclick="location.href='festivalList_Local.jsp?&name=busan'">View Details</a>
+                                        <a class="small text-white stretched-link" href="#" onclick="location.href='festivalList_Local.jsp?&busan'">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -72,7 +72,7 @@
                                 <div class="card bg-success text-white mb-4">
                                     <div class="card-body">대구광역시</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#" onclick="location.href='festivalList_Local.jsp?&name=daegu'">View Details</a>
+                                        <a class="small text-white stretched-link" href="#" onclick="location.href='festivalList_Local.jsp?&daegu'">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -81,7 +81,7 @@
                                 <div class="card bg-primary text-white mb-4">
                                     <div class="card-body">울산광역시</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#" onclick="location.href='festivalList_Local.jsp?&name=ulsan'">View Details</a>
+                                        <a class="small text-white stretched-link" href="#" onclick="location.href='festivalList_Local.jsp?&ulsan'">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -96,7 +96,7 @@
                                 <div class="card bg-warning text-white mb-4">
                                     <div class="card-body">대전광역시</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#" onclick="location.href='festivalList_Local.jsp?&name=daejeon'">View Details</a>
+                                        <a class="small text-white stretched-link" href="#" onclick="location.href='festivalList_Local.jsp?&daejeon'">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -105,7 +105,7 @@
                                 <div class="card bg-black text-white mb-4">
                                     <div class="card-body">광주광역시</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#" onclick="location.href='festivalList_Local.jsp?&name=gwangju'">View Details</a>
+                                        <a class="small text-white stretched-link" href="#" onclick="location.href='festivalList_Local.jsp?&gwangju'">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -114,7 +114,7 @@
                                 <div class="card bg-info text-white mb-4">
                                     <div class="card-body">세종시</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#" onclick="location.href='festivalList_Local.jsp?&name=sejong'">View Details</a>
+                                        <a class="small text-white stretched-link" href="#" onclick="location.href='festivalList_Local.jsp?&sejong'">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -123,7 +123,7 @@
                                 <div class="card bg-success text-white mb-4">
                                     <div class="card-body">경상북도</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#" onclick="location.href='festivalList_Local.jsp?&name=gyeongsangbuk-do'">View Details</a>
+                                        <a class="small text-white stretched-link" href="#" onclick="location.href='festivalList_Local.jsp?&gyeongsangbuk-do'">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -132,7 +132,7 @@
                                 <div class="card bg-primary text-white mb-4">
                                     <div class="card-body">경상남도</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#" onclick="location.href='festivalList_Local.jsp?&name=gyeongsangnam-do'">View Details</a>
+                                        <a class="small text-white stretched-link" href="#" onclick="location.href='festivalList_Local.jsp?&gyeongsangnam-do'">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -141,7 +141,7 @@
                                 <div class="card bg-warning text-white mb-4">
                                     <div class="card-body">충청북도</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#" onclick="location.href='festivalList_Local.jsp?&name=chungcheongbuk-do'">View Details</a>
+                                        <a class="small text-white stretched-link" href="#" onclick="location.href='festivalList_Local.jsp?&chungcheongbuk-do'">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -156,7 +156,7 @@
                                 <div class="card bg-black text-white mb-4">
                                     <div class="card-body">충청남도</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#" onclick="location.href='festivalList_Local.jsp?&name=chungcheongnam-do'">View Details</a>
+                                        <a class="small text-white stretched-link" href="#" onclick="location.href='festivalList_Local.jsp?&chungcheongnam-do'">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -165,7 +165,7 @@
                                 <div class="card bg-info text-white mb-4">
                                     <div class="card-body">강원도</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#" onclick="location.href='festivalList_Local.jsp?&name=gangwon-do'">View Details</a>
+                                        <a class="small text-white stretched-link" href="#" onclick="location.href='festivalList_Local.jsp?&gangwon-do'">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -174,7 +174,7 @@
                                 <div class="card bg-success text-white mb-4">
                                     <div class="card-body">전라북도</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#" onclick="location.href='festivalList_Local.jsp?&name=jeollabuk-do'">View Details</a>
+                                        <a class="small text-white stretched-link" href="#" onclick="location.href='festivalList_Local.jsp?&jeollabuk-do'">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -183,7 +183,7 @@
                                 <div class="card bg-primary text-white mb-4">
                                     <div class="card-body">전라남도</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#" onclick="location.href='festivalList_Local.jsp?&name=jeollanam-do'">View Details</a>
+                                        <a class="small text-white stretched-link" href="#" onclick="location.href='festivalList_Local.jsp?&jeollanam-do'">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -192,7 +192,7 @@
                                 <div class="card bg-warning text-white mb-4">
                                     <div class="card-body">제주도</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#" onclick="location.href='festivalList_Local.jsp?&name=jeju-do'">View Details</a>
+                                        <a class="small text-white stretched-link" href="#" onclick="location.href='festivalList_Local.jsp?&jeju-do'">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
