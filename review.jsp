@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+    pageEncoding="utf-8"%>
 <%@ page language="java" import="java.text.*, java.sql.*" %>
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="EUC-KR" />
+	<meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
@@ -15,7 +15,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
 	<style>
 		body{
-        	background-color : #2D2D2D;
+        	background-color : #fff;
         }
 	</style>
 </head>
@@ -23,7 +23,7 @@
 
 
 <%
-	request.setCharacterEncoding("euc-kr");
+	request.setCharacterEncoding("utf-8");
 	String rauthor = request.getParameter("bbsTitle");
 	String rcontents= request.getParameter("bbsContent");
 	String fid = request.getParameter("fid");
@@ -31,7 +31,7 @@
 	String rpwd = "1234"; 
 	
 	String serverIP = "localhost";
-	String strSID = "XE";
+	String strSID = "orcl";
 	String portNum = "1521";
 	String user = "COMPANY";
 	String pass = "comp322";

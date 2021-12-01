@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+    pageEncoding="utf-8"%>
 <%@ page language="java" import="java.text.*, java.sql.*" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
@@ -46,11 +46,11 @@ body{
 
 	<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
     <!-- Navbar Brand-->
-    	<a class="navbar-brand ps-3" href="main.html">占쏙옙占쏙옙 占쏙옙占쏙옙 占싫놂옙</a>
+    	<a class="navbar-brand ps-3" href="main.html">전국 축제 안내</a>
         <!-- Navbar Search-->
         <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0" method="POST" action="searchList.jsp">
             <div class="input-group">
-                <input name="searchFestival" class="form-control" type="text" placeholder="키占쏙옙占썲를 占싯삼옙占쌔븝옙占쏙옙占쏙옙..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                <input name="searchFestival" class="form-control" type="text" placeholder="키워드를 검색해보세요..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
                 <button class="btn btn-primary" id="btnNavbarSearch" type="submit"><i class="fas fa-search"></i></button>
             </div>
         </form>
@@ -58,7 +58,7 @@ body{
 
 <%
 	String serverIP = "localhost";
-	String strSID = "XE";
+	String strSID = "orcl";
 	String portNum = "1521";
 	String user = "COMPANY";
 	String pass = "comp322";
@@ -149,7 +149,7 @@ body{
 
 	out.print("<hr/>");
 
-	out.print("<div > <div class=\"row\"> <table class='scrolltbody' style=\"text-align: left; border: 1px solid #dddddd\"><thead>"+
+	out.print("<div > <div class=\"row\"> <table class='scrolltbody'style=\"background-color:#fff; text-align: left; border: 1px solid #dddddd\"><thead>"+
       "<tr><th style=\"background-color: #eeeeee; text-align: center;\">작성자</th>"+
          "<th  style=\"background-color: #eeeeee; text-align: center;\">평가</th>"+
          "<th  style=\"background-color: #eeeeee; text-align: center;\">내용</th></tr></thead><tbody>");

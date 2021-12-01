@@ -51,7 +51,7 @@ gyeongseob_seo
 
 <%
  String serverIP = "localhost";
- String strSID = "XE";
+ String strSID = "orcl";
  String portNum = "1521";
  String user = "COMPANY";
  String pass = "comp322";

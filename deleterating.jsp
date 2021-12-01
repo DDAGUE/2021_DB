@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+    pageEncoding="utf-8"%>
 <%@ page language="java" import="java.text.*, java.sql.*" %>
 <!DOCTYPE html>
 <html>
@@ -13,6 +13,11 @@
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
+        <style>
+		body{
+        	background-color : #fff;
+        }
+		</style>
 </head>
 <body>
 <%
@@ -21,7 +26,7 @@
 	String fid = request.getParameter("fid");
 	
 	String serverIP = "localhost";
-	String strSID = "XE";
+	String strSID = "orcl";
 	String portNum = "1521";
 	String user = "COMPANY";
 	String pass = "comp322";
