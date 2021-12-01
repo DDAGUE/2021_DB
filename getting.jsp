@@ -60,7 +60,7 @@ body{
 	String serverIP = "localhost";
 	String strSID = "orcl";
 	String portNum = "1521";
-	String user = "COMPANY";
+	String user = "university";
 	String pass = "comp322";
 	String url = "jdbc:oracle:thin:@"+serverIP+":"+portNum+":"+strSID;
 	Connection conn = null;
@@ -136,6 +136,7 @@ body{
 <%
 	out.print("<hr/>");
 	out.print("<div style=\"height: 60px; width: 110px ;position: relative ;display: inline-block \">");
+	out.print("<form method =\"post\" action=\"review.jsp?&fid="+fid+"\">");
 	out.print("<input type=\"text\"  placeholder=\"작성자\" name=\"bbsTitle\" maxlength=\"50\"style=\"height: 20px; width: 100px; \">");
 	out.print("<input type=\"text\"  placeholder=\"평점\" name=\"bbsRating\" maxlength=\"50\"style=\"height: 20px; width: 100px; \">");
 	out.print("</div>");
