@@ -49,7 +49,7 @@
 	   
 	if(s == 0)
 	{
-	   out.print("삭제중 에러가 발생했습니다. ");
+	   out.print("<h3>삭제중 에러가 발생했습니다. </h3>");
 	   conn.rollback(p1);
 	}
 	   
@@ -57,9 +57,9 @@
 	   
 	pstmt.close();
 	conn.close();
-	   
-	out.print("<h3> 리뷰 삭제가 완료되었습니다. </h3>");
-	
+	if(s != 0){
+		out.print("<h3> 리뷰 삭제가 완료되었습니다. </h3>");
+	}
 	out.print("<button type=\"button\" onClick=\"location.href='getting.jsp?&fid="+fid+"'\"> 돌아가기  </button>");
 %>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
