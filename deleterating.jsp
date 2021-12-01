@@ -4,8 +4,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
-<title>Insert title here</title>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>TEAM_ë†€ëŸ¬ê°€ì¡°</title>
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+        <link href="css/styles.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <%
@@ -14,9 +21,9 @@
 	String fid = request.getParameter("fid");
 	
 	String serverIP = "localhost";
-	String strSID = "orcl";
+	String strSID = "XE";
 	String portNum = "1521";
-	String user = "university";
+	String user = "COMPANY";
 	String pass = "comp322";
 	String url = "jdbc:oracle:thin:@"+serverIP+":"+portNum+":"+strSID;
 	Connection conn = null;
@@ -38,10 +45,12 @@
 	pstmt.close();
 	conn.close();
 	
-	out.print("<h3> ¸®ºä »èÁ¦°¡ ¿Ï·áµÇ¾ú½À´Ï´Ù. </h3>");
+	out.print("<h3> ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½. </h3>");
 	
-	out.print("<button type=\"button\" onClick=\"location.href='getting.jsp?&fid="+fid+"'\"> µ¹¾Æ°¡±â </button>");
+	out.print("<button type=\"button\" onClick=\"location.href='getting.jsp?&fid="+fid+"'\"> ï¿½ï¿½ï¿½Æ°ï¿½ï¿½ï¿½ </button>");
 %>
-
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
 </body>
 </html>

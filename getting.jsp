@@ -5,14 +5,24 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>Phase2</title>
-<link rel="stylesheet" href="css/custom.css">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+<title>TEAM_ë†€ëŸ¬ê°€ì¡°</title>
+<link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+<link href="css/styles.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
+
 <style>
+body{
+    background-color : #2D2D2D;
+}
 .scrolltbody {
     display: block;
-    width: 700px;
+    width: 500px;
     border-collapse: collapse;
-    border: 2px solid #000;
+    border: 2px solid #2D2D2D;
 }
 .scrolltbody table {
 	width: 100%
@@ -33,11 +43,24 @@
 </style>
 </head>
 <body>
+
+	<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+    <!-- Navbar Brand-->
+    	<a class="navbar-brand ps-3" href="main.html">ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½È³ï¿½</a>
+        <!-- Navbar Search-->
+        <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0" method="POST" action="searchList.jsp">
+            <div class="input-group">
+                <input name="searchFestival" class="form-control" type="text" placeholder="Å°ï¿½ï¿½ï¿½å¸¦ ï¿½Ë»ï¿½ï¿½Øºï¿½ï¿½ï¿½ï¿½ï¿½..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                <button class="btn btn-primary" id="btnNavbarSearch" type="submit"><i class="fas fa-search"></i></button>
+            </div>
+        </form>
+     </nav>
+
 <%
 	String serverIP = "localhost";
-	String strSID = "orcl";
+	String strSID = "XE";
 	String portNum = "1521";
-	String user = "university";
+	String user = "COMPANY";
 	String pass = "comp322";
 	String url = "jdbc:oracle:thin:@"+serverIP+":"+portNum+":"+strSID;
 	Connection conn = null;
@@ -48,6 +71,10 @@
 	Class.forName("oracle.jdbc.driver.OracleDriver");
 	conn = DriverManager.getConnection(url, user, pass);
 %>
+	<div class = "card mb-4" style="position: relative;">
+		<div class ="card-header">
+		
+
 
 <%
 	String fid = request.getParameter("fid");
@@ -78,51 +105,57 @@
 		String holding_method = rs.getString(11);
 		String festival_subject = rs.getString(12);
 		
-		String [] splited_contents = contents.split("¡Û");
+		String [] splited_contents = contents.split("ï¿½ï¿½");
 		String temp = "";
 		
 		for(int i = 1; i < splited_contents.length; i++)
 		{
-			temp += ("&nbsp;&nbsp;&nbsp;¡Û "+ splited_contents[i] + "</br>");	
+			temp += ("&nbsp;&nbsp;&nbsp;ï¿½ï¿½ "+ splited_contents[i] + "</br>");	
 		}
 		
 		contents = "</br></br>"+temp;
 		out.print("<p align=\"center\">");
 		out.print("<h3>" + name); out.print("</h3></br>");
-		out.print("ÃàÁ¦ ³¯Â¥ : " + fdate);out.print("</br>");
-		out.print("ÃàÁ¦ Á¾·ù : " + festival_category);out.print("</br>");
-		out.print("ÃàÁ¦ ±â°£ : " + holding_term);out.print("</br>");
-		out.print("ÃàÁ¦ °³ÃÖ¹ý : " + holding_method);out.print("</br>");
-		out.print("ÃàÁ¦ À§Ä¡ : " + state + ", " + town_city + ", " + holding_location);out.print("</br>");
-		out.print("ÃàÁ¦ ÁÖÁ¦ : " + festival_subject);out.print("</br>");
-		out.print("ÃàÁ¦ ³»¿ë : " + contents);out.print("</br>");
-		out.print("ÃàÁ¦ °³ÃÖ ±â°ü : " + host_name);out.print("</br>");
-		out.print("ÃàÁ¦ °³ÃÖÀÚ ¹øÈ£ : " + contact_number);out.print("</br>");
+		out.print("</div>");
+		out.print("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Â¥ : " + fdate);out.print("</br>");
+		out.print("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ : " + festival_category);out.print("</br>");
+		out.print("ï¿½ï¿½ï¿½ï¿½ ï¿½â°£ : " + holding_term);out.print("</br>");
+		out.print("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ö¹ï¿½ : " + holding_method);out.print("</br>");
+		out.print("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ : " + state + ", " + town_city + ", " + holding_location);out.print("</br>");
+		out.print("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ : " + festival_subject);out.print("</br>");
+		out.print("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ : " + contents);out.print("</br>");
+		out.print("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ : " + host_name);out.print("</br>");
+		out.print("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£ : " + contact_number);out.print("</br>");
 		out.print("</p>");
 		
 		
 	}
+%>
+		</div>
+	</div>
+	<div class = "card mb-4" style="position: relative;">
+<%
 	out.print("<hr/>");
 	out.print("<div style=\" position: relative \">");
 	out.print("<form method =\"post\" action=\"review.jsp?&fid="+fid+"\">");
 	out.print("<div style=\"height: 60px; width: 110px ;position: relative ;display: inline-block \">");
-	out.print("<input type=\"text\"  placeholder=\"ÀÛ¼ºÀÚ\" name=\"bbsTitle\" maxlength=\"50\"style=\"height: 20px; width: 100px; \">");
-	out.print("<input type=\"text\"  placeholder=\"ÆòÁ¡\" name=\"bbsRating\" maxlength=\"50\"style=\"height: 20px; width: 100px; \">");
+	out.print("<input type=\"text\"  placeholder=\"ï¿½Û¼ï¿½ï¿½ï¿½\" name=\"bbsTitle\" maxlength=\"50\"style=\"height: 20px; width: 100px; \">");
+	out.print("<input type=\"text\"  placeholder=\"ï¿½ï¿½ï¿½ï¿½\" name=\"bbsRating\" maxlength=\"50\"style=\"height: 20px; width: 100px; \">");
 	out.print("</div>");
 	out.print("<div style=\"height: 60px; width: 600px ;position: relative; display: inline\">");
-	out.print("<textarea placeholder=\"±Û ³»¿ë\" name=\"bbsContent\" maxlength=\"2048\" style=\"height: 40px; width: 650px\"></textarea>");
+	out.print("<textarea placeholder=\"ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½\" name=\"bbsContent\" maxlength=\"2048\" style=\"height: 40px; width: 650px\"></textarea>");
 	out.print("</div>");
 	out.print("<div style=\" height: 60px; width: 80px; position:relative; display: inline \">");
-	out.print("<input style=\" height: 40px \" type=\"submit\"  value=\"±Û¾²±â\">");
+	out.print("<input style=\" height: 40px \" type=\"submit\"  value=\"ï¿½Û¾ï¿½ï¿½ï¿½\">");
 	out.print("</div></form>");
 	out.print("</div>");
 	
 	out.print("<hr/>");
 
 	out.print("<div > <div class=\"row\"> <table class='scrolltbody' style=\"text-align: left; border: 1px solid #dddddd\"><thead>"+
-			"<tr><th style=\"background-color: #eeeeee; text-align: center;\">ÀÛ¼ºÀÚ</th>"+
-				"<th  style=\"background-color: #eeeeee; text-align: center;\">Æò°¡</th>"+
-				"<th  style=\"background-color: #eeeeee; text-align: center;\">³»¿ë</th></tr></thead><tbody>");
+			"<tr><th style=\"background-color: #eeeeee; text-align: center;\">ï¿½Û¼ï¿½ï¿½ï¿½</th>"+
+				"<th  style=\"background-color: #eeeeee; text-align: center;\">ï¿½ï¿½</th>"+
+				"<th  style=\"background-color: #eeeeee; text-align: center;\">ï¿½ï¿½ï¿½ï¿½</th></tr></thead><tbody>");
 	
 	
 	String review_sql = "select * from review where fid = " + fid;
@@ -148,8 +181,11 @@
 	pstmt.close();
 	conn.close();
 %>
-	<!-- °Ô½ÃÆÇ ¸ÞÀÎ ÆäÀÌÁö ¿µ¿ª ½ÃÀÛ -->
-	
+	</div>
+	<!-- ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="js/bootstrap.js"></script>
 </body>
