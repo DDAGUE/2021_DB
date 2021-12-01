@@ -31,10 +31,10 @@
 	String rpwd = "1234"; 
 	
 	String serverIP = "localhost";
-	String strSID = "orcl";
+	String strSID = "xe";
 	String portNum = "1521";
-	String user = "COMPANY";
-	String pass = "comp322";
+	String user = "festival";
+	String pass = "festival";
 	String url = "jdbc:oracle:thin:@"+serverIP+":"+portNum+":"+strSID;
 	Connection conn = null;
 	PreparedStatement pstmt = null;

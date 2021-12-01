@@ -19,12 +19,25 @@ gyeongseob_seo
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
 </head>
 <body>
+	<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            <!-- Navbar Brand-->
+        <a class="navbar-brand ps-3" href="main.html">전국 축제 안내</a>
+            <!-- Navbar Search-->
+        <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0" method="POST" action="searchList.jsp">
+            <div class="input-group">
+                <input name="searchFestival" class="form-control" type="text" placeholder="키워드를 검색해보세요..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                <button class="btn btn-primary" id="btnNavbarSearch" type="submit"><i class="fas fa-search"></i></button>
+            </div>
+        </form>
+    </nav>
+
+
 <%
  String serverIP = "localhost";
- String strSID = "orcl";
+ String strSID = "xe";
  String portNum = "1521";
- String user = "COMPANY";
- String pass = "comp322";
+ String user = "festival";
+ String pass = "festival";
  String url = "jdbc:oracle:thin:@"+serverIP+":"+portNum+":"+strSID;
  
  Connection conn = null;
@@ -57,9 +70,15 @@ case "jeju-do": palid = 16; localStr = "제주도"; break;
 }
 		
 if(localStr == "세종특별'||CHR(13)||CHR(10)||'자치시청")
-	out.println("<h2>세종특별자치시청 전통시장 목록</h2>");
+	out.println("<h2 class=\"mt-4 text-white\">세종특별자치시청 전통시장 목록</h2>");
 else
-	out.println("<h2>" + localStr + " 전통시장 목록" + "</h2>");
+	out.println("<h2 class=\"mt-4 text-white\">" + localStr + " 전통시장 목록" + "</h2>");
+
+%>
+<div class="card mb-4">
+<%
+out.println("<div class = \"card-header\">");
+out.println("</div>");
 
 String query = "SELECT MARKET_NAME, MARKET_ADDRESS "
 	 + "FROM TRADITIONAL_MARKET, PLACE_AT "
@@ -68,7 +87,15 @@ String query = "SELECT MARKET_NAME, MARKET_ADDRESS "
 
 pstmt = conn.prepareStatement(query);
 rs = pstmt.executeQuery();
-out.println("<table border=\"1\">");
+
+%>
+
+<div class = "card-body">
+	<div class="dataTable-container">
+
+<%
+
+out.println("<table class=\"dataTable-table\" border=\"1\">");
 ResultSetMetaData rsmd = rs.getMetaData();
 int cnt = rsmd.getColumnCount();
 for(int i=1; i <= cnt; i++){
@@ -83,6 +110,9 @@ while(rs.next()){
 }
 out.println("</table>");
 %>
+
+</div>
+</div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
