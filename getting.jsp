@@ -46,11 +46,11 @@ body{
 
 	<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
     <!-- Navbar Brand-->
-    	<a class="navbar-brand ps-3" href="main.html">���� ���� �ȳ�</a>
+    	<a class="navbar-brand ps-3" href="main.html">占쏙옙占쏙옙 占쏙옙占쏙옙 占싫놂옙</a>
         <!-- Navbar Search-->
         <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0" method="POST" action="searchList.jsp">
             <div class="input-group">
-                <input name="searchFestival" class="form-control" type="text" placeholder="Ű���带 �˻��غ�����..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                <input name="searchFestival" class="form-control" type="text" placeholder="키占쏙옙占썲를 占싯삼옙占쌔븝옙占쏙옙占쏙옙..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
                 <button class="btn btn-primary" id="btnNavbarSearch" type="submit"><i class="fas fa-search"></i></button>
             </div>
         </form>
@@ -105,29 +105,28 @@ body{
 		String holding_method = rs.getString(11);
 		String festival_subject = rs.getString(12);
 		
-		String [] splited_contents = contents.split("��");
+		String [] splited_contents = contents.split("○");
 		String temp = "";
 		
 		for(int i = 1; i < splited_contents.length; i++)
 		{
-			temp += ("&nbsp;&nbsp;&nbsp;�� "+ splited_contents[i] + "</br>");	
+			temp += ("&nbsp;&nbsp;&nbsp;○ "+ splited_contents[i] + "</br>");	
 		}
 		
 		contents = "</br></br>"+temp;
 		out.print("<p align=\"center\">");
 		out.print("<h3>" + name); out.print("</h3></br>");
 		out.print("</div>");
-		out.print("���� ��¥ : " + fdate);out.print("</br>");
-		out.print("���� ���� : " + festival_category);out.print("</br>");
-		out.print("���� �Ⱓ : " + holding_term);out.print("</br>");
-		out.print("���� ���ֹ� : " + holding_method);out.print("</br>");
-		out.print("���� ��ġ : " + state + ", " + town_city + ", " + holding_location);out.print("</br>");
-		out.print("���� ���� : " + festival_subject);out.print("</br>");
-		out.print("���� ���� : " + contents);out.print("</br>");
-		out.print("���� ���� ��� : " + host_name);out.print("</br>");
-		out.print("���� ������ ��ȣ : " + contact_number);out.print("</br>");
-		out.print("</p>");
-		
+		out.print("축제 날짜 : " + fdate);out.print("</br>");
+	    out.print("축제 종류 : " + festival_category);out.print("</br>");
+	    out.print("축제 기간 : " + holding_term);out.print("</br>");
+	    out.print("축제 개최법 : " + holding_method);out.print("</br>");
+	    out.print("축제 위치 : " + state + ", " + town_city + ", " + holding_location);out.print("</br>");
+	    out.print("축제 주제 : " + festival_subject);out.print("</br>");
+	    out.print("축제 내용 : " + contents);out.print("</br>");
+	    out.print("축제 개최 기관 : " + host_name);out.print("</br>");
+	    out.print("축제 개최자 번호 : " + contact_number);out.print("</br>");
+	    out.print("</p>");
 		
 	}
 %>
@@ -136,26 +135,24 @@ body{
 	<div class = "card mb-4" style="position: relative;">
 <%
 	out.print("<hr/>");
-	out.print("<div style=\" position: relative \">");
-	out.print("<form method =\"post\" action=\"review.jsp?&fid="+fid+"\">");
 	out.print("<div style=\"height: 60px; width: 110px ;position: relative ;display: inline-block \">");
-	out.print("<input type=\"text\"  placeholder=\"�ۼ���\" name=\"bbsTitle\" maxlength=\"50\"style=\"height: 20px; width: 100px; \">");
-	out.print("<input type=\"text\"  placeholder=\"����\" name=\"bbsRating\" maxlength=\"50\"style=\"height: 20px; width: 100px; \">");
+	out.print("<input type=\"text\"  placeholder=\"작성자\" name=\"bbsTitle\" maxlength=\"50\"style=\"height: 20px; width: 100px; \">");
+	out.print("<input type=\"text\"  placeholder=\"평점\" name=\"bbsRating\" maxlength=\"50\"style=\"height: 20px; width: 100px; \">");
 	out.print("</div>");
 	out.print("<div style=\"height: 60px; width: 600px ;position: relative; display: inline\">");
-	out.print("<textarea placeholder=\"�� ����\" name=\"bbsContent\" maxlength=\"2048\" style=\"height: 40px; width: 650px\"></textarea>");
+	out.print("<textarea placeholder=\"글 내용\" name=\"bbsContent\" maxlength=\"2048\" style=\"height: 40px; width: 650px\"></textarea>");
 	out.print("</div>");
 	out.print("<div style=\" height: 60px; width: 80px; position:relative; display: inline \">");
-	out.print("<input style=\" height: 40px \" type=\"submit\"  value=\"�۾���\">");
+	out.print("<input style=\" height: 40px \" type=\"submit\"  value=\"글쓰기\">");
 	out.print("</div></form>");
 	out.print("</div>");
-	
+
 	out.print("<hr/>");
 
 	out.print("<div > <div class=\"row\"> <table class='scrolltbody' style=\"text-align: left; border: 1px solid #dddddd\"><thead>"+
-			"<tr><th style=\"background-color: #eeeeee; text-align: center;\">�ۼ���</th>"+
-				"<th  style=\"background-color: #eeeeee; text-align: center;\">��</th>"+
-				"<th  style=\"background-color: #eeeeee; text-align: center;\">����</th></tr></thead><tbody>");
+      "<tr><th style=\"background-color: #eeeeee; text-align: center;\">작성자</th>"+
+         "<th  style=\"background-color: #eeeeee; text-align: center;\">평가</th>"+
+         "<th  style=\"background-color: #eeeeee; text-align: center;\">내용</th></tr></thead><tbody>");
 	
 	
 	String review_sql = "select * from review where fid = " + fid;
@@ -182,7 +179,7 @@ body{
 	conn.close();
 %>
 	</div>
-	<!-- �Խ��� ���� ������ ���� ���� -->
+	<!-- 占쌉쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙 -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>

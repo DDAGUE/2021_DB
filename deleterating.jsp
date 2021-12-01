@@ -36,18 +36,26 @@
 	conn = DriverManager.getConnection(url, user, pass);
 	conn.setAutoCommit(false);
 	
+	Savepoint p1 = conn.setSavepoint();
+	   
 	pstmt = conn.prepareStatement(sql);
-	
-	pstmt.executeUpdate();
-	
+	   
+	int s = pstmt.executeUpdate();
+	   
+	if(s == 0)
+	{
+	   out.print("삭제중 에러가 발생했습니다. ");
+	   conn.rollback(p1);
+	}
+	   
 	conn.commit();
-	
+	   
 	pstmt.close();
 	conn.close();
+	   
+	out.print("<h3> 리뷰 삭제가 완료되었습니다. </h3>");
 	
-	out.print("<h3> ���� ������ �Ϸ�Ǿ����ϴ�. </h3>");
-	
-	out.print("<button type=\"button\" onClick=\"location.href='getting.jsp?&fid="+fid+"'\"> ���ư��� </button>");
+	out.print("<button type=\"button\" onClick=\"location.href='getting.jsp?&fid="+fid+"'\"> 돌아가기  </button>");
 %>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
